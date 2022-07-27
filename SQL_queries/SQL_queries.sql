@@ -52,7 +52,7 @@ VALUES
 ("2939",3,4,3.18);
 
 UPDATE `dbsummer_2022`.`products`
-SET stock = stock + (SELECT quantity
+SET stock = stock - (SELECT quantity
 					 FROM `dbsummer_2022`.`orderdetails`
 					 WHERE id = (SELECT MAX(id)
 								 FROM `dbsummer_2022`.`orderdetails`))
